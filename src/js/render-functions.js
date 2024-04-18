@@ -9,27 +9,23 @@ function createMarkup(arr) {
         views,
         comments,
         downloads,
-      }) => `<li class="item">
-      <a href="${largeImageURL}"><img src="${webformatURL}" alt="${tags}" class="image" /></a>
-      <div class="content">
-        <div>
-          <h2 class="content-text">Likes</h2>
-          <p class="number-text">${likes}</p>
+      }) => `<li class="gallery-item">
+        <div class="thumb">
+            <a class="gallery-link" href="${largeImageURL}">
+              <img
+                class="gallery-image"
+                src="${webformatURL}"
+                alt="${tags}"
+              />
+            </a>
+              <ul class="description-list">
+                <li class="description-items"><span class="accent">Likes </span>${likes}</li>
+                <li class="description-items"><span class="accent">Views </span>${views}</li>
+                <li class="description-items"><span class="accent">Comments </span>${comments}</li>
+                <li class="description-items"><span class="accent">Downloads </span>${downloads}</li>
+              </ul>
         </div>
-        <div>
-          <h2 class="content-text">Views</h2>
-          <p class="number-text">${views}</p>
-        </div>
-        <div>
-          <h2 class="content-text">Comments</h2>
-          <p class="number-text">${comments}</p>
-        </div>
-        <div>
-          <h2 class="content-text">Downloads</h2>
-          <p class="number-text">${downloads}</p>
-        </div>
-      </div>
-    </li>`
+      </li>`
     )
     .join('');
 }
